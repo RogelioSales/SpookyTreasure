@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour {
-
+public class EnemyMovement : MonoBehaviour
+{
     [SerializeField]
     float movementSpeed;
 
     [SerializeField]
     Transform Player;
 
- 
+    float distanceToPlayer;
+    float step;
 
-    // Update is called once per frame
-    void Update ()
+    void Update()
     {
-       
-            float step = movementSpeed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, Player.position, step);
-       
+        distanceToPlayer = Vector2.Distance(this.transform.position, Player.position);
+        step = movementSpeed * Time.deltaTime * (1/distanceToPlayer);
+
+        transform.position = Vector3.MoveTowards(transform.position, Player.position, step);
     }
 }
