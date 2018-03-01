@@ -7,16 +7,42 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float movementSpeed;
 
+    private Animator anim;
+    private bool playerMoving;
+    private Vector2 movement;
+
     Rigidbody2D rb;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        Vector2 movementVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        rb.AddForce(movementVector * movementSpeed);
+        playerMoving = false;
+
+        if(Input.GetAxis("Horizontal") > 0.5f || Input.GetAxis("Horizontal") < -0.5f)
+        {
+          movement = new Vector2(Input.GetAxis("Horizontal"),0f);
+          rb.AddForce(movement * movementSpeed);
+            playerMoving = true;
+        }
+       if(Input.GetAxis("Vertical") >0.5f || Input.GetAxis("Vertical") < -0.5f)
+        {
+            movement = new Vector2(0f, Input.GetAxis("Vertical"));
+            rb.AddForce(movement * movementSpeed);
+            playerMoving = true;
+        }
+
+        anim.SetFloat("MoveX", Input.GetAxis("Horizontal"));
+        anim.SetFloat("MoveY", Input.GetAxis("Vertical"));
+        anim.SetBool("PlayerMoving", playerMoving);
+        anim.SetFloat("LastMoveX", movement.x);
+        anim.SetFloat("LastMoveY", movement.y);
+
+     
     }
 }
