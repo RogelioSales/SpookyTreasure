@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerVision : MonoBehaviour
 {
+    //For testing vision
     [SerializeField]
     Camera cam;
 
@@ -17,7 +18,6 @@ public class PlayerVision : MonoBehaviour
 
     static Vector3 mousePosition;
     Vector3 WorldMousePosition;
-
     
     bool canSeeEnemy = false;
 
@@ -43,14 +43,17 @@ public class PlayerVision : MonoBehaviour
 
             if (enemyAngle <= visionAngle)
             {
-                canSeeEnemy = true;
+                enemy.GetComponent<EnemyMovement>().CanBeSeen = true;
+                canSeeEnemy = true; //for testing
             }
             else
             {
-                canSeeEnemy = false;
+                enemy.GetComponent<EnemyMovement>().CanBeSeen = false;
+                canSeeEnemy = false; //for testing
             }
         }
 
+        //for testing
         if (canSeeEnemy)
         {
             //Debug.Log("I can see an enemy!");

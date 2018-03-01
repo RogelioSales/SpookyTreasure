@@ -13,11 +13,23 @@ public class EnemyMovement : MonoBehaviour
     float distanceToPlayer;
     float step;
 
+    bool canBeSeen;
+    public bool CanBeSeen
+    {
+        set
+        {
+            canBeSeen = value;
+        }
+    }
+
     void Update()
     {
-        distanceToPlayer = Vector2.Distance(this.transform.position, Player.position);
-        step = movementSpeed * Time.deltaTime * (1/distanceToPlayer);
+        if (!canBeSeen)
+        {
+            distanceToPlayer = Vector2.Distance(this.transform.position, Player.position);
+            step = movementSpeed * Time.deltaTime * (1 / distanceToPlayer);
 
-        transform.position = Vector3.MoveTowards(transform.position, Player.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, Player.position, step);
+        }
     }
 }

@@ -780,7 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  Player: {fileID: 54490554}
+  Player: {fileID: 138326658}
 --- !u!212 &1767993113
 SpriteRenderer:
   m_ObjectHideFlags: 0
