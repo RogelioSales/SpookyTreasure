@@ -16,6 +16,6 @@ public class CoinText : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        coinCountText.text = string.Format("Coins: {0}", Coin.CoinCount);
+        coinCountText.text = string.Format("Coins: {0}", CoinManager.CoinCount);
     }
 }

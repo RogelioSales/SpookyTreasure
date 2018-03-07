@@ -737,6 +737,8 @@ GameObject:
   m_Component:
   - component: {fileID: 236775832}
   - component: {fileID: 236775831}
+  - component: {fileID: 236775833}
+  - component: {fileID: 236775834}
   m_Layer: 0
   m_Name: Stairs
   m_TagString: Untagged
@@ -801,6 +803,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236775833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236775830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dd528d6bbffd640b63aa5688da6876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &236775834
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236775830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &428063838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1891,7 @@ GameObject:
   - component: {fileID: 1733097077}
   - component: {fileID: 1733097076}
   - component: {fileID: 1733097075}
+  - component: {fileID: 1733097079}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1923,6 +1962,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1733097079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1733097074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c806f0e999a72c14bb02b95b78f57859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 138326654}
 --- !u!1 &1767993111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,6 +1984,8 @@ GameObject:
   - component: {fileID: 1767993114}
   - component: {fileID: 1767993113}
   - component: {fileID: 1767993112}
+  - component: {fileID: 1767993115}
+  - component: {fileID: 1767993116}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Enemy
@@ -2010,6 +2063,32 @@ Transform:
   m_Father: {fileID: 428063839}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767993115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767993111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c12f539bd554e5488fcee4257a57c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &1767993116
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767993111}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1790508216
 GameObject:
   m_ObjectHideFlags: 0
