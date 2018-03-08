@@ -27,6 +27,19 @@ public class CoinManager : MonoBehaviour
 
     public static int savedCoinCount;
 
+    public static int coinsInLevel;
+
+    private void Awake()
+    {
+        
+    }
+
+    private void Start()
+    {
+        Instance.FindAllCoinsInLevel();
+        
+    }
+
     public void AddCoin()
     {
         CoinCount++;
@@ -47,5 +60,10 @@ public class CoinManager : MonoBehaviour
         CoinCount = savedCoinCount;
     }
 
+    public void FindAllCoinsInLevel()
+    {
+        GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+        coinsInLevel = coins.Length;
+    }
 
 }
