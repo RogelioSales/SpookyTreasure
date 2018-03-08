@@ -1831,6 +1831,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &1527403442
 Prefab:
   m_ObjectHideFlags: 0
@@ -1878,6 +1879,8 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: 9cb0fe11b9acd1e4c8407a38e8f3430b, type: 2}
   m_IsPrefabParent: 0
 =======
+=======
+>>>>>>> 2af279fab5c2bc47e8ca67593db8ab0f25fcbb6a
 =======
 >>>>>>> 2af279fab5c2bc47e8ca67593db8ab0f25fcbb6a
 =======
@@ -1999,6 +2002,9 @@ CanvasRenderer:
   m_GameObject: {fileID: 1607834207}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 2af279fab5c2bc47e8ca67593db8ab0f25fcbb6a
+=======
 >>>>>>> 2af279fab5c2bc47e8ca67593db8ab0f25fcbb6a
 =======
 >>>>>>> 2af279fab5c2bc47e8ca67593db8ab0f25fcbb6a
