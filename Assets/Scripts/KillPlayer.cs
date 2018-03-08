@@ -3,29 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KillPlayer : MonoBehaviour
-{
-    Scene currentScene;
+public class KillPlayer : MonoBehaviour {
 
-    void Start()
+
+    Scene currentScene;
+    private void Start()
     {
         currentScene = SceneManager.GetActiveScene();
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            if (GameObject.FindGameObjectWithTag("Player Lives").GetComponent<PlayerLives>().NumberOfLivesRemaining > 0)
-            {
-                GameObject.FindGameObjectWithTag("Player Lives").GetComponent<PlayerLives>().LoseLife();
-                RestartLevel();
-            }
-            else
-            {
-                SceneManager.LoadScene("Lose");
-            }
-        }
     }
 
     void RestartLevel()
@@ -33,5 +17,13 @@ public class KillPlayer : MonoBehaviour
         CoinManager.Instance.ResetToSavedCoinCount();
         CoinManager.Instance.ResetLevelCoinCount();
         SceneManager.LoadScene(currentScene.name);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            RestartLevel();
+        }
     }
 }
