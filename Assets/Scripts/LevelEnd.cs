@@ -14,6 +14,7 @@ public class LevelEnd : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         CoinManager.Instance.SaveCoinCount();
+        CoinManager.Instance.ResetLevelCoinCount();
         SceneManager.LoadScene("Level2");
     }
 }

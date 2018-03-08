@@ -23,7 +23,6 @@ public class Coin : MonoBehaviour {
             spriteRenderer.enabled = false;
             boxCollider2D.enabled = false;
 
-
         }
 
 

@@ -15,6 +15,7 @@ public class KillPlayer : MonoBehaviour {
     void RestartLevel()
     {
         CoinManager.Instance.ResetToSavedCoinCount();
+        CoinManager.Instance.ResetLevelCoinCount();
         SceneManager.LoadScene(currentScene.name);
     }
 

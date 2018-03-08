@@ -29,25 +29,28 @@ public class CoinManager : MonoBehaviour
 
     public static int coinsInLevel;
 
-    private void Awake()
-    {
-        
-    }
+    public static int collectedCoinsInLevel;
 
     private void Start()
     {
         Instance.FindAllCoinsInLevel();
-        
     }
+
 
     public void AddCoin()
     {
         CoinCount++;
+        collectedCoinsInLevel++;
     }
 
     public void ResetCoinCount()
     {
         CoinCount = 0;
+    }
+
+    public void ResetLevelCoinCount()
+    {
+        collectedCoinsInLevel = 0;
     }
 
     public void SaveCoinCount()
