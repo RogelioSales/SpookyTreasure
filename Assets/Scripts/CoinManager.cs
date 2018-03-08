@@ -13,9 +13,9 @@ public class CoinManager : MonoBehaviour
         {
             if (instance == null)
             {
-                var gameObject = new GameObject(name: typeof(CoinManager).Name);
-                instance = gameObject.AddComponent<CoinManager>();
-                DontDestroyOnLoad(gameObject);
+                var go = new GameObject(name: typeof(CoinManager).Name);
+                instance = go.AddComponent<CoinManager>();
+                
             }
 
             return instance;
@@ -23,16 +23,17 @@ public class CoinManager : MonoBehaviour
     }
 
 
-    public static int CoinCount { get; private set; }
+    public int CoinCount { get; private set; }
 
-    public static int savedCoinCount;
+    public int savedCoinCount;
 
-    public static int coinsInLevel;
+    public int coinsInLevel;
 
-    public static int collectedCoinsInLevel;
+    public int collectedCoinsInLevel;
 
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
         Instance.FindAllCoinsInLevel();
     }
 
