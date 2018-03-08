@@ -43,12 +43,12 @@ public class PlayerVision : MonoBehaviour
 
             if (enemyAngle <= visionAngle)
             {
-                enemy.GetComponent<EnemyMovement>().CanBeSeen = true;
+                enemy.GetComponent<EnemyMovement>().BeingWatched();
                 canSeeEnemy = true; //for testing
             }
             else
             {
-                enemy.GetComponent<EnemyMovement>().CanBeSeen = false;
+                enemy.GetComponent<EnemyMovement>().NotBeingWatched();
                 canSeeEnemy = false; //for testing
             }
         }
