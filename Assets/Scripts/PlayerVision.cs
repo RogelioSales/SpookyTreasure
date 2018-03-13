@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerVision : MonoBehaviour
 {
-    //For testing vision
-    [SerializeField]
-    Camera cam;
-
     [SerializeField]
     float visionAngle = 15.0f;
 
@@ -18,8 +14,6 @@ public class PlayerVision : MonoBehaviour
 
     static Vector3 mousePosition;
     Vector3 WorldMousePosition;
-    
-    bool canSeeEnemy = false;
 
     void Start()
     {
@@ -44,25 +38,11 @@ public class PlayerVision : MonoBehaviour
             if (enemyAngle <= visionAngle)
             {
                 enemy.GetComponent<EnemyMovement>().BeingWatched();
-                canSeeEnemy = true; //for testing
             }
             else
             {
                 enemy.GetComponent<EnemyMovement>().NotBeingWatched();
-                canSeeEnemy = false; //for testing
             }
-        }
-
-        //for testing
-        if (canSeeEnemy)
-        {
-            //Debug.Log("I can see an enemy!");
-            cam.backgroundColor = Color.red;
-        }
-        else
-        {
-            //Debug.Log("I can't see an enemy!");
-            cam.backgroundColor = Color.blue;
         }
     }
 }
