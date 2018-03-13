@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
+    public bool HasKey { get; private set; }
 
-    private static CoinManager instance;
 
-    public static CoinManager Instance
+    private static InventoryManager instance;
+
+    public static InventoryManager Instance
     {
         get
         {
             if (instance == null)
             {
-                var go = new GameObject(name: typeof(CoinManager).Name);
-                instance = go.AddComponent<CoinManager>();
+                var go = new GameObject(name: typeof(InventoryManager).Name);
+                instance = go.AddComponent<InventoryManager>();
                 
             }
 
@@ -22,7 +24,7 @@ public class CoinManager : MonoBehaviour
         }
     }
 
-
+    #region Coin Stuff
     public int CoinCount { get; private set; }
 
     public int savedCoinCount;
@@ -31,12 +33,7 @@ public class CoinManager : MonoBehaviour
 
     public int collectedCoinsInLevel;
 
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-        Instance.FindAllCoinsInLevel();
-    }
-
+    
 
     public void AddCoin()
     {
@@ -68,6 +65,22 @@ public class CoinManager : MonoBehaviour
     {
         GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
         coinsInLevel = coins.Length;
+    }
+    #endregion
+
+    #region Key Stuff
+
+    public void GetKey()
+    {
+        HasKey = true;
+    }
+
+    #endregion
+
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+        FindAllCoinsInLevel();
     }
 
 }
