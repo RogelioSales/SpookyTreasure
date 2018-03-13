@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LevelEnd : MonoBehaviour
 {
 
-
     private void Start()
     {
 
@@ -14,16 +13,8 @@ public class LevelEnd : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (InventoryManager.Instance.HasKey == true)
-        {
-            InventoryManager.Instance.SaveCoinCount();
-            InventoryManager.Instance.ResetLevelCoinCount();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else
-        {
-            Debug.Log("You need a key!");
-        }
-        
+        CoinManager.Instance.SaveCoinCount();
+        CoinManager.Instance.ResetLevelCoinCount();
+        SceneManager.LoadScene("Level2");
     }
 }

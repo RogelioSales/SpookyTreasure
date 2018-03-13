@@ -19,7 +19,7 @@ public class Coin : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            InventoryManager.Instance.AddCoin();
+            CoinManager.Instance.AddCoin();
             spriteRenderer.enabled = false;
             boxCollider2D.enabled = false;
 
