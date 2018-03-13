@@ -9,12 +9,14 @@ public class EnemyMovement : MonoBehaviour
 
     [SerializeField]
     Transform Player;
+    
 
     float distanceToPlayer;
     float step;
 
     bool isStunned = false;
     bool isFirstTimeAfterLookingAway = true;
+    
 
     void Update()
     {
@@ -26,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 //if (distanceToPlayer < 5.0f)
                 //{
-                //    step = movementSpeed * Time.deltaTime * (1 / 5);
+                //  step = movementSpeed * Time.deltaTime * (1 / 5);
                 //}
                 //else
                 //{
@@ -46,6 +48,11 @@ public class EnemyMovement : MonoBehaviour
     public void NotBeingWatched()
     {
         StartCoroutine(Stun());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 
     IEnumerator Stun()
