@@ -15,6 +15,8 @@ public class PlayerVision : MonoBehaviour
     static Vector3 mousePosition;
     Vector3 WorldMousePosition;
 
+
+
     void Start()
     {
         mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
@@ -32,10 +34,11 @@ public class PlayerVision : MonoBehaviour
 
         foreach (var enemy in enemiesList)
         {
+            float dist = Vector3.Distance(enemy.transform.position, this.transform.position);
             enemyDirection = enemy.transform.position - this.gameObject.transform.position;
             enemyAngle = Vector3.Angle(enemyDirection, lookPos);
 
-            if (enemyAngle <= visionAngle)
+            if (enemyAngle <= visionAngle && dist < 3.5)
             {
                 enemy.GetComponent<EnemyMovement>().BeingWatched();
             }
